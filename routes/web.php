@@ -24,17 +24,17 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::namespace('Site')->group(function(){
-    Route::get('/',[HomeController::class,'index'])->name('index');
+    Route::get('/',[HomeController::class,'index'])->name('site.home');
 
-    Route::get('produtos',[CategoryController::class,'index'])->name('category');
-    Route::get('produtos/{slug}',[CategoryController::class,'show'])->name('show');
+    Route::get('produtos',[CategoryController::class,'index'])->name('site.produtos');
+    Route::get('produtos/{slug}',[CategoryController::class,'show'])->name('site.produtos.category');
 
-    Route::get('blog',[BlogController::class,'index'])->name('blog');
+    Route::get('blog',[BlogController::class,'index'])->name('site.blog');
 
-    Route::view('sobre','site.sobre.index')->name('sobre');
+    Route::view('sobre','site.sobre.index')->name('site.sobre');
 
-    Route::get('contato',[ContatoController::class,'index'])->name('contato');
-    Route::post('contato',[ContatoController::class,'form'])->name('contato');
+    Route::get('contato',[ContatoController::class,'index'])->name('site.contato');
+    Route::post('contato',[ContatoController::class,'form'])->name('site.contato.form');
 
 
 
